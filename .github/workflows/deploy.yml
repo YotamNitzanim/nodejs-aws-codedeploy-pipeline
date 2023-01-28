@@ -27,4 +27,5 @@ jobs:
         --deployment-group-name nodejs-express-app-cd \
         --deployment-config-name CodeDeployDefault.OneAtATime \
         --github-location repository=${{ github.repository }},commitId=${{ github.sha }} \
+        --file-exists-behavior OVERWRITE
 
