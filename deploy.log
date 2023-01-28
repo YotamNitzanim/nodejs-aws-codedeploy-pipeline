@@ -145,3 +145,24 @@ Use --update-env to update environment variables
 │ 1   │ app                   │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 15   │ errored   │ 0%       │ 0b       │ root     │ disabled │
 │ 0   │ nodejs-express-app    │ default     │ 1.0.0   │ fork    │ 7981     │ 0s     │ 64   │ online    │ 0%       │ 9.9mb    │ root     │ disabled │
 └─────┴───────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+run after_install.sh: 
+cd /home/ec2-user/nodejs-server-cicd
+npm install
+
+added 57 packages, and audited 58 packages in 2s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+run application_start.sh: 
+pm2 restart nodejs-express-app
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [nodejs-express-app](ids: [ 0 ])
+[PM2] [nodejs-express-app](0) ✓
+┌─────┬───────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name                  │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼───────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 1   │ app                   │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 15   │ errored   │ 0%       │ 0b       │ root     │ disabled │
+│ 0   │ nodejs-express-app    │ default     │ 1.0.0   │ fork    │ 18006    │ 0s     │ 65   │ online    │ 0%       │ 14.5mb   │ root     │ disabled │
+└─────┴───────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
